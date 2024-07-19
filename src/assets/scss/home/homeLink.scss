@@ -1,0 +1,27 @@
+.home-link-item {
+  width: 100%;
+  text-decoration: none;
+  color: black;
+  .home-link-span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    p {
+      font-family: var(--serif);
+    }
+    :nth-child(1) {
+      font-size: 0.8vw;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+    :nth-child(2) {
+      margin-left: 0.5vw;
+      margin-right: 0.75vw;
+    }
+    :nth-child(3) {
+      font-size: 0.8vw;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+  }
+}

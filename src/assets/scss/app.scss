@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap");
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --serif: "Noto Serif TC", serif;
+  --micro: "Microsoft JhengHei";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+img,
+canvas {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#app {
+  height: 100vh;
+  width: 100%;
+}

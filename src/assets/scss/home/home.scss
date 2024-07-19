@@ -1,0 +1,71 @@
+#home {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .home-half-circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    .home-half-circle-line,
+    .home-half-circle-full {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .home-icon {
+    position: absolute;
+    width: 7vw;
+    right: 5%;
+    top: 5%;
+  }
+  .home-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .home-title-text {
+      position: absolute;
+    }
+    .home-forest {
+      width: 33vw;
+      left: 38%;
+      top: 23%;
+    }
+    .home-text-1 {
+      width: 7.75vw;
+      left: 72%;
+      top: 14%;
+    }
+    .home-text-2 {
+      width: 16vw;
+      left: 35.85%;
+      top: 38%;
+    }
+    .home-house {
+      width: 27vw;
+      left: 54%;
+      top: 39%;
+    }
+    .home-text-3 {
+      width: 43vw;
+      left: 38%;
+      top: 55.5%;
+    }
+  }
+
+  .home-link {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    left: 5%;
+    top: 38%;
+    width: 14vw;
+    gap: 3.75vw 0vw;
+  }
+}
