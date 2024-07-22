@@ -2,6 +2,7 @@
   width: 100%;
   text-decoration: none;
   color: black;
+  overflow: hidden;
   .home-link-span {
     display: flex;
     align-items: center;
@@ -10,16 +11,16 @@
       font-family: var(--serif);
     }
     :nth-child(1) {
-      font-size: 0.8vw;
+      font-size: var(--navSize);
       font-weight: 500;
       letter-spacing: 2px;
     }
     :nth-child(2) {
-      margin-left: 0.5vw;
+      margin-left: 0.55vw;
       margin-right: 0.75vw;
     }
     :nth-child(3) {
-      font-size: 0.8vw;
+      font-size: var(--navSize);
       font-weight: 400;
       letter-spacing: 1px;
     }
