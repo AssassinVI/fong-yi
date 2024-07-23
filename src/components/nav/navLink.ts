@@ -79,7 +79,7 @@ export const navLink = [
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "home",
         zhName: "我是連結",
       },
     ],

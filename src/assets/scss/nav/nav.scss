@@ -13,15 +13,7 @@
     #e9ffd0 94%,
     #cdffde 100%
   );
-  //   background: linear-gradient(
-  //     to right,
-  //     #cdffde 0%,
-  //     #e9ffd0 12%,
-  //     #a6fff1 70%,
-  //     #9dffb4 88%,
-  //     #94ff71 100%
-  //   );
-  padding: 1.5vw 3vw;
+  padding-inline: 3vw;
   z-index: 100;
   background-size: 400%;
   animation: neon 60s linear infinite;
@@ -51,43 +43,69 @@
       align-items: center;
       font-family: var(--serif);
       font-size: var(--navSize);
-      margin-left: 2vw;
       line-height: 1.75;
       letter-spacing: 1px;
       color: black;
       a {
+        position: relative;
+        padding-block: 0.75vw;
         text-decoration: none;
+        font-weight: 500;
         color: black;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          width: 90%;
+          height: 1px;
+          transform: translate(-50%, -50%);
+          background-color: #8e8e8e;
+        }
+      }
+      a:last-of-type {
+        &::after {
+          content: unset;
+        }
       }
       .nav-left-text-item {
         position: relative;
         display: flex;
         align-items: baseline;
         gap: 2vw;
-        margin-right: 2vw;
+        padding-inline: 2vw;
+        padding-block: 1.5vw;
+        text-align: center;
         cursor: pointer;
         .nav-left-text-item-line {
           display: block;
+          position: absolute;
           width: 1px;
-          height: 0.75vw;
+          height: 0.65vw;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 100%;
           background-color: black;
         }
         .nav-child {
           position: absolute;
           width: 100%;
-          top: 100%;
+          top: 50%;
+          left: 0;
           opacity: 0;
           display: flex;
           justify-content: center;
           flex-direction: column;
-          background-color: white;
+          background-color: rgba(252, 254, 233, 0.75);
+          pointer-events: none;
           transition: all 0.5s;
         }
       }
       .nav-left-text-item:hover {
         .nav-child {
           opacity: 1;
-          top: 200%;
+          top: 100%;
+          pointer-events: all;
           transition: all 0.5s;
         }
       }
@@ -101,7 +119,7 @@
   .nav-right {
     transform: translate(-50%, -50%);
     position: absolute;
-    top: 32%;
+    top: 45%;
     left: 96%;
     width: 5vw;
   }
