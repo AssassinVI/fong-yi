@@ -2,76 +2,124 @@
   position: relative;
   width: 100%;
   height: 100%;
-
-  .home-half-circle {
+  .show {
+    display: block;
+  }
+  .home-in {
+    position: relative;
     width: 100%;
     height: 100%;
-    position: absolute;
-    .home-half-circle-line,
-    .home-half-circle-full {
+    .home-half-circle {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      .home-half-circle-line,
+      .home-half-circle-full {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        mask-image: url("../../img/home/svg-black-circle.svg");
+        mask-size: 125%;
+        mask-position: -150vw -150vw;
+        mask-repeat: no-repeat;
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    .home-icon {
+      position: absolute;
+      width: 7vw;
+      right: 5%;
+      top: 5%;
+    }
+    .home-title {
       position: absolute;
       width: 100%;
       height: 100%;
-      mask-image: url("../../img/home/svg-black-circle.svg");
-      mask-size: 125%;
-      mask-position: -150vw -150vw;
-      mask-repeat: no-repeat;
-      img {
-        height: 100%;
+      .home-title-text {
+        position: absolute;
+      }
+      .home-forest {
+        width: 33vw;
+        height: 5.75vw;
+        left: 38%;
+        top: 13.5vw;
+        background: url("../../img/home/home-forest.webp");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 100%;
+        overflow: hidden;
+      }
+      .light {
+        mix-blend-mode: plus-lighter;
+        opacity: 0.4;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 200vw;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0) 0%,
+          rgb(255, 255, 255) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(27deg) translateX(-300%);
+        animation-name: lightMv;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes lightMv {
+        0% {
+          transform: rotate(27deg) translateX(-300%);
+        }
+        100% {
+          transform: rotate(27deg) translateX(200%);
+        }
+      }
+      .home-text-1 {
+        width: 7.75vw;
+        left: 72%;
+        top: 9vw;
+      }
+      .home-text-2 {
+        width: 16vw;
+        left: 35.85%;
+        top: 22vw;
+      }
+      .home-house {
+        width: 27vw;
+        height: 5.75vw;
+        left: 54%;
+        top: 22.5vw;
+        background: url("../../img/home/home-house.webp");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 100%;
+        overflow: hidden;
+        .light {
+          animation-delay: 0.75s;
+        }
+      }
+      .home-text-3 {
+        width: 43vw;
+        left: 38%;
+        top: 31vw;
+        overflow: hidden;
       }
     }
-  }
 
-  .home-icon {
-    position: absolute;
-    width: 7vw;
-    right: 5%;
-    top: 5%;
-  }
-  .home-title {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    .home-title-text {
+    .home-link {
       position: absolute;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      left: 5%;
+      top: 38%;
+      width: 14vw;
+      gap: 3.75vw 0vw;
     }
-    .home-forest {
-      width: 33vw;
-      left: 38%;
-      top: 13.5vw;
-    }
-    .home-text-1 {
-      width: 7.75vw;
-      left: 72%;
-      top: 9vw;
-    }
-    .home-text-2 {
-      width: 16vw;
-      left: 35.85%;
-      top: 22vw;
-    }
-    .home-house {
-      width: 27vw;
-      left: 54%;
-      top: 22.5vw;
-    }
-    .home-text-3 {
-      width: 43vw;
-      left: 38%;
-      top: 31vw;
-      overflow: hidden;
-    }
-  }
-
-  .home-link {
-    position: absolute;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    left: 5%;
-    top: 38%;
-    width: 14vw;
-    gap: 3.75vw 0vw;
   }
 }

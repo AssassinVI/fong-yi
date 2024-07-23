@@ -9,15 +9,7 @@
 
 <script setup lang="ts">
 import Nav from "@/components/nav/Nav.vue";
-import { RouteRecordNameGeneric } from "vue-router";
-import { useNavNameStore } from "@/store/navStore";
 import "@/assets/scss/area/area.scss";
-
-const route = useRoute();
-
-const routeName = ref<RouteRecordNameGeneric>("");
-
-const navStore = useNavNameStore();
 </script>
 
 <style scoped></style>
