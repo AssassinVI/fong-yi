@@ -144,12 +144,11 @@
           justify-content: center;
           flex-direction: column;
           background: linear-gradient(
-            to right,
-            rgb(249, 249, 249) 0%,
-            rgb(249, 249, 249) 49%,
-            rgb(249, 249, 249) 81%
+            to bottom,
+            rgba(245, 245, 245, 1) 0%,
+            rgba(250, 250, 250, 1) 50%,
+            rgba(230, 230, 230, 1) 80%
           );
-          // background-color: rgba(252, 254, 233, 0.75);
           pointer-events: none;
           transition: all 0.5s;
         }
@@ -170,10 +169,6 @@
     }
   }
   .nav-right {
-    // transform: translate(-50%, -50%);
-    // position: absolute;
-    // top: 53%;
-    // left: 96%;
     width: 5vw;
   }
 }

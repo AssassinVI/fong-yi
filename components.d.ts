@@ -11,7 +11,6 @@ declare module 'vue' {
     FadeInItem: typeof import('./src/components/transition/FadeInItem.vue')['default']
     FullScreen: typeof import('./src/components/fullscreen/FullScreen.vue')['default']
     HomeNav: typeof import('./src/components/home/HomeNav.vue')['default']
-    LeftToRight: typeof import('./src/components/transition/LeftToRight.vue')['default']
     Nav: typeof import('./src/components/nav/Nav.vue')['default']
     NavChild: typeof import('./src/components/nav/NavChild.vue')['default']
     RightToLeft: typeof import('./src/components/transition/RightToLeft.vue')['default']
