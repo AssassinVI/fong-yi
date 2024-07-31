@@ -6,14 +6,14 @@
   align-items: center;
   justify-content: center;
   z-index: 200;
-  background: linear-gradient(
-    to right,
-    #cdffde 0%,
-    #e9ffd0 31%,
-    #a6fff1 60%,
-    #9dffb4 80%,
-    #94ff71 100%
-  );
+  // background: linear-gradient(
+  //   to right,
+  //   #cdffde 0%,
+  //   #e9ffd0 31%,
+  //   #a6fff1 60%,
+  //   #9dffb4 80%,
+  //   #94ff71 100%
+  // );
   .full-img {
     width: 15vw;
     cursor: pointer;
@@ -22,4 +22,5 @@
 .fullscreenout {
   pointer-events: none;
   opacity: 0;
+  transition: opacity 0.5s;
 }

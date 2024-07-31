@@ -1,6 +1,7 @@
 export const navLink = [
   {
     name: "THE AREA",
+    zhName: "首選地段",
     child: [
       {
         pathName: "area",
@@ -18,6 +19,7 @@ export const navLink = [
   },
   {
     name: "THE LANDMARK",
+    zhName: "首景地標",
     child: [
       {
         pathName: "area",
@@ -35,6 +37,7 @@ export const navLink = [
   },
   {
     name: "THE TEAM",
+    zhName: "首席團隊",
     child: [
       {
         pathName: "area",
@@ -52,6 +55,7 @@ export const navLink = [
   },
   {
     name: "THE BUILDING",
+    zhName: "首席建築",
     child: [
       {
         pathName: "area",
@@ -69,6 +73,7 @@ export const navLink = [
   },
   {
     name: "THE FACILITIES",
+    zhName: "首席配備",
     child: [
       {
         pathName: "area",

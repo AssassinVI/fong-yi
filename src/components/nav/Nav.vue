@@ -7,7 +7,9 @@
         </div>
         <div class="nav-left-text">
           <div class="nav-left-text-item" v-for="item in navLink" :key="nanoid">
-            <span>{{ item.name }}</span
+            <span class="nav-link-span">
+              <p>{{ item.zhName }}</p>
+              <p>{{ item.name }}</p> </span
             ><span class="nav-left-text-item-line"></span>
             <div class="nav-child">
               <NavChild

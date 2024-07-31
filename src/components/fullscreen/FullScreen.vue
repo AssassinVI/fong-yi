@@ -1,7 +1,7 @@
 <template>
   <section id="fullscreen" :class="fadeOut">
     <div class="full-img" @click="handleClick">
-      <img src="../../assets/img/nav/nav-icon.png" alt="nav-icon" />
+      <img src="../../assets/img/home/home-icon.svg" alt="home-icon" />
     </div>
   </section>
 </template>

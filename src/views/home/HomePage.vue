@@ -1,53 +1,61 @@
 <template>
   <article id="home">
+    <video
+      src="../../assets/video/video.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+    ></video>
     <FullScreen
       :animationStart="animationStart"
       @home-Animation="homeAnimation"
     />
-    <div class="home-in" :class="{ show }">
-      <div class="home-half-circle">
-        <div class="home-half-circle-line" ref="circleLine">
-          <img
-            src="../../assets/img/home/home-circle-line.png"
-            alt="home-circle-line"
-          />
-        </div>
-        <div class="home-half-circle-full" ref="circleFull">
-          <img
-            src="../../assets/img/home/home-circle-full.png"
-            alt="home-circle-full"
-          />
-        </div>
+    <div class="home-in" :class="{ show }" ref="homebgRef">
+      <div class="home-bg">
+        <img src="../../assets/img/home/home-bg-03.png" alt="home-bg" />
       </div>
-      <div class="home-icon">
-        <img src="../../assets/img/home/icon.svg" alt="icon" />
+      <div class="home-fluid">
+        <img src="../../assets/img/home/home-fluid-03.png" alt="home-fluid" />
+      </div>
+      <div class="home-house">
+        <img
+          src="../../assets/img/home/home-house-02.png"
+          alt="home-house"
+          ref="houseRef"
+        />
+      </div>
+      <div class="home-green">
+        <div class="home-green-in">
+          <div class="light"></div>
+        </div>
       </div>
       <div class="home-title">
-        <div class="home-title-text home-forest" ref="forest">
-          <div class="light"></div>
+        <div class="home-title-text home-title-1" ref="titleIcon">
+          <img src="../../assets/img/home/icon.svg" alt="icon" />
         </div>
-        <div class="home-title-text home-text-1" ref="text1">
-          <img src="../../assets/img/home/home-text-1.webp" alt="home-text-1" />
+        <div class="home-title-text home-title-2" ref="titleZh">
+          <img src="../../assets/img/home/home-1.png" alt="home-1" />
         </div>
-        <div class="home-title-text home-text-2" ref="text2">
-          <img src="../../assets/img/home/home-text-2.webp" alt="home-text-2" />
-        </div>
-        <div class="home-title-text home-house" ref="house">
-          <div class="light"></div>
-        </div>
-        <div class="home-title-text home-text-3" ref="text3">
-          <img src="../../assets/img/home/home-text-3.webp" alt="home-text-3" />
+        <div class="home-title-text home-title-3" ref="titleEn">
+          <img src="../../assets/img/home/home-2.png" alt="home-2" />
         </div>
       </div>
-      <div class="home-link">
-        <HomeNav
-          v-for="item in homeLink"
-          :key="nanoid()"
-          :nav="item.name"
-          :zh="item.zh"
-          :en="item.en"
-          @child-to="childTo"
-        />
+      <div class="home-menu">
+        <div class="home-menu-dot" @click="toggleBar">
+          <img src="../../assets/img/nav/nav-dot.svg" alt="nav-dot" />
+        </div>
+        <RightToLeft>
+          <div class="home-link" v-show="barShow">
+            <HomeNav
+              v-for="item in homeLink"
+              :key="nanoid()"
+              :nav="item.name"
+              :zh="item.zh"
+              :en="item.en"
+            />
+          </div>
+        </RightToLeft>
       </div>
     </div>
   </article>
@@ -59,93 +67,75 @@ import { nanoid } from "nanoid";
 import { homeLink } from "./homeLink";
 import FullScreen from "@/components/fullscreen/FullScreen.vue";
 import HomeNav from "@/components/home/HomeNav.vue";
+import RightToLeft from "@/components/transition/RightToLeft.vue";
 import "@/assets/scss/home/home.scss";
 
-//背景圓圈
-const circleLine = ref(null);
-const circleFull = ref(null);
+//背景
+const homebgRef = ref(null);
 
-//英文字
-const forest = ref(null);
-const house = ref(null);
-const text3 = ref(null);
+//城市
+const houseRef = ref(null);
 
-//中文字
-const text1 = ref(null);
-const text2 = ref(null);
+//標題
+const titleZh = ref(null);
+const titleEn = ref(null);
+const titleIcon = ref(null);
 
-const homeNavRefs = ref<HTMLElement[]>([]);
+//navBar切換
+const barShow = ref(false);
 
-const childTo = (val: HTMLElement) => {
-  homeNavRefs.value.push(val);
+const toggleBar = () => {
+  barShow.value = !barShow.value;
 };
 
 const animationStart = ref(false);
+
 const show = computed(() => {
   return animationStart.value ? "show" : "";
 });
+
 const homeAnimation = () => {
   const homeTl = gsap.timeline();
-  //背景圓圈陣列
-  const circleArr = gsap.utils.toArray([circleLine.value, circleFull.value]);
-  //中文字陣列
-  const textArr = gsap.utils.toArray([text1.value, text2.value]);
 
   homeTl
-    .from(forest.value, {
-      filter: "blur(10px)",
-      x: "10%",
-      opacity: 0,
-      duration: 1.5,
+    .to(homebgRef.value, {
+      maskPosition: "-27vw 40%",
+      duration: 5,
     })
     .from(
-      house.value,
+      houseRef.value,
       {
-        filter: "blur(10px)",
-        x: "-10%",
+        y: "20%",
         opacity: 0,
         duration: 1.5,
       },
-      "<+0.5"
+      "<+2"
     )
     .from(
-      textArr,
+      titleZh.value,
       {
+        x: "-5%",
         opacity: 0,
-        filter: "blur(10px)",
         duration: 1.5,
       },
-      "<+0.5"
+      "<+1"
     )
     .from(
-      text3.value,
+      titleEn.value,
       {
-        filter: "blur(10px)",
-        x: "10%",
+        x: "5%",
         opacity: 0,
         duration: 1.5,
-      },
-      "<+0.5"
-    )
-    .from(
-      homeNavRefs.value,
-      {
-        filter: "blur(10px)",
-        x: "50%",
-        stagger: 0.25,
-        opacity: 0,
-        duration: 1.5,
-      },
-      "<+0.5"
-    )
-    .to(
-      circleArr,
-      {
-        maskPosition: "-13vw -40vw",
-        stagger: 0.25,
-        duration: 3,
       },
       "<+0.25"
+    )
+    .from(
+      titleIcon.value,
+      {
+        opacity: 0,
+        duration: 1.5,
+      },
+      "<+0.5"
     );
 };
 </script>
