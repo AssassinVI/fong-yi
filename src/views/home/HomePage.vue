@@ -19,7 +19,11 @@
         <img src="../../assets/img/home/home-fluid-03.png" alt="home-fluid" />
       </div>
       <div class="home-house" ref="houseRef">
-        <img src="../../assets/img/home/home-house-02.png" alt="home-house" />
+        <img
+          src="../../assets/img/home/home-house-02.png"
+          alt="home-house"
+          ref="houseInRef"
+        />
       </div>
       <div class="home-green">
         <div class="home-green-in">
@@ -31,7 +35,7 @@
           <img src="../../assets/img/home/icon.svg" alt="icon" />
         </div>
         <div class="home-title-text home-title-2" ref="titleZh">
-          <img src="../../assets/img/home/home-1.png" alt="home-1" />
+          <div class="light"></div>
         </div>
         <div class="home-title-text home-title-3" ref="titleEn">
           <img src="../../assets/img/home/home-2.png" alt="home-2" />
@@ -71,6 +75,7 @@ const homebgRef = ref(null);
 
 //城市
 const houseRef = ref(null);
+const houseInRef = ref(null);
 
 //標題
 const titleZh = ref(null);
@@ -104,6 +109,14 @@ const homeAnimation = () => {
       { opacity: 0, filter: "blur(15px) brightness(3)" },
       { opacity: 1, filter: "blur(0px) brightness(1)", duration: 3 },
       "<+1"
+    )
+    .from(
+      houseInRef.value,
+      {
+        scale: 1.5,
+        duration: 1.5,
+      },
+      "<"
     )
     .from(
       titleZh.value,

@@ -104,32 +104,6 @@
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: 100%;
-        .light {
-          mix-blend-mode: plus-lighter;
-          opacity: 0.4;
-          position: relative;
-          z-index: 1;
-          width: 100%;
-          height: 200vw;
-          background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 0) 0%,
-            rgb(255, 255, 255) 50%,
-            rgba(255, 255, 255, 0) 100%
-          );
-          transform: rotate(27deg) translateX(-300%);
-          animation-name: lightMv;
-          animation-duration: 10s;
-          animation-iteration-count: infinite;
-        }
-        @keyframes lightMv {
-          0% {
-            transform: rotate(27deg) translateX(-300%);
-          }
-          100% {
-            transform: rotate(27deg) translateX(200%);
-          }
-        }
       }
     }
     .home-icon {
@@ -150,12 +124,48 @@
       }
       .home-title-2 {
         width: 24vw;
+        height: 8vw;
+        background: url("../../img/home/home-1.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: 100%;
+        mask-image: url("../../img/home/home-1.png");
+        mask-size: 100%;
+        mask-position: 100%;
+        mask-repeat: no-repeat;
+        overflow: hidden;
         margin-top: 1vw;
       }
       .home-title-3 {
         width: 24vw;
         margin-top: 2vw;
       }
+    }
+  }
+  .light {
+    mix-blend-mode: plus-lighter;
+    opacity: 0.4;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 200vw;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(27deg) translateX(-300%);
+    animation-name: lightMv;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes lightMv {
+    0% {
+      transform: rotate(27deg) translateX(-300%);
+    }
+    100% {
+      transform: rotate(27deg) translateX(200%);
     }
   }
 }
