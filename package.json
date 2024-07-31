@@ -11,6 +11,7 @@
   "dependencies": {
     "@types/is-url": "^1.2.32",
     "@types/node": "^20.14.11",
+    "@vitejs/plugin-legacy": "^5.4.1",
     "gsap": "^3.12.5",
     "nanoid": "^5.0.7",
     "pinia": "^2.1.7",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
+    "terser": "^5.31.3",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.18.0",
     "unplugin-vue-components": "^0.27.3",
