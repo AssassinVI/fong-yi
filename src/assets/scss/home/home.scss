@@ -72,6 +72,16 @@
       bottom: 12vw;
       width: 52%;
       z-index: 5;
+      mask-image: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 35%,
+        rgba(0, 0, 0, 0) 65%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      mask-size: 500% 500%;
+      mask-position: 50% 65%;
+      mask-repeat: no-repeat;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 0 50%);
       overflow: hidden;
     }

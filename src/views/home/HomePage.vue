@@ -18,12 +18,8 @@
       <div class="home-fluid">
         <img src="../../assets/img/home/home-fluid-03.png" alt="home-fluid" />
       </div>
-      <div class="home-house">
-        <img
-          src="../../assets/img/home/home-house-02.png"
-          alt="home-house"
-          ref="houseRef"
-        />
+      <div class="home-house" ref="houseRef">
+        <img src="../../assets/img/home/home-house-02.png" alt="home-house" />
       </div>
       <div class="home-green">
         <div class="home-green-in">
@@ -102,14 +98,12 @@ const homeAnimation = () => {
       maskPosition: "-27vw 40%",
       duration: 5,
     })
-    .from(
+    .from(houseRef.value, { maskPosition: "50% 65%", duration: 3 }, "<+1")
+    .fromTo(
       houseRef.value,
-      {
-        y: "20%",
-        opacity: 0,
-        duration: 1.5,
-      },
-      "<+2"
+      { opacity: 0, filter: "blur(15px) brightness(3)" },
+      { opacity: 1, filter: "blur(0px) brightness(1)", duration: 3 },
+      "<+1"
     )
     .from(
       titleZh.value,
