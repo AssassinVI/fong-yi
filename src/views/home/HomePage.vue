@@ -111,7 +111,7 @@ const homeAnimation = () => {
       "<+1"
     )
     .from(
-      houseInRef.value,
+      houseRef.value,
       {
         scale: 1.5,
         duration: 1.5,
