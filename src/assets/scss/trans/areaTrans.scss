@@ -1,0 +1,34 @@
+#area-trans {
+  display: flex;
+  padding-top: 5vw;
+  .area-trans-map {
+    width: 40vw;
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../img/example/trans-map.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    .trans-mask-1 {
+      transform: scale(1);
+      transform-origin: 51% 75%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .area-trans-right {
+    ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      li {
+        font-size: 2vw;
+        cursor: pointer;
+      }
+    }
+  }
+}

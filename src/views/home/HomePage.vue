@@ -32,7 +32,7 @@
       </div>
       <div class="home-title">
         <div class="home-title-text home-title-1" ref="titleIcon">
-          <img src="../../assets/img/home/icon.svg" alt="icon" />
+          <img src="../../assets/img/home/logo.svg" alt="icon" />
         </div>
         <div class="home-title-text home-title-2" ref="titleZh">
           <div class="light"></div>
@@ -58,6 +58,7 @@
         </RightToLeft>
       </div>
     </div>
+    <WindowClose />
   </article>
 </template>
 
@@ -68,6 +69,7 @@ import { homeLink } from "./homeLink";
 import FullScreen from "@/components/fullscreen/FullScreen.vue";
 import HomeNav from "@/components/home/HomeNav.vue";
 import RightToLeft from "@/components/transition/RightToLeft.vue";
+import WindowClose from "@/components/close/WindowClose.vue";
 import "@/assets/scss/home/home.scss";
 
 //背景

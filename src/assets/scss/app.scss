@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 *,
 ::after,
 ::before {
@@ -11,6 +11,8 @@
 :root {
   --serif: "Noto Serif TC", serif;
   --micro: "Microsoft JhengHei";
+  --lato: "Lato", sans-serif;
+  --mainSize: 1.2vw;
   --navSize: 0.85vw;
 }
 
@@ -19,6 +21,9 @@ body {
   height: 100%;
   width: 100%;
   background-color: rgb(230, 230, 230);
+}
+body {
+  position: relative;
 }
 img,
 canvas {

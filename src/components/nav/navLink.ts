@@ -1,25 +1,25 @@
 export const navLink = [
   {
     name: "THE AREA",
-    zhName: "首選地段",
+    zhName: "地段豐域",
     child: [
       {
         pathName: "area",
-        zhName: "我是連結",
+        zhName: "國際水湳",
       },
       {
-        pathName: "area",
-        zhName: "我是連結",
+        pathName: "eight",
+        zhName: "八大建設",
       },
       {
-        pathName: "area",
-        zhName: "我是連結",
+        pathName: "trans",
+        zhName: "交通樞紐",
       },
     ],
   },
   {
     name: "THE LANDMARK",
-    zhName: "首景地標",
+    zhName: "生態豐綻",
     child: [
       {
         pathName: "area",
@@ -37,7 +37,7 @@ export const navLink = [
   },
   {
     name: "THE TEAM",
-    zhName: "首席團隊",
+    zhName: "團隊豐藝",
     child: [
       {
         pathName: "area",
@@ -55,7 +55,7 @@ export const navLink = [
   },
   {
     name: "THE BUILDING",
-    zhName: "首席建築",
+    zhName: "建築豐馥",
     child: [
       {
         pathName: "area",
@@ -73,7 +73,7 @@ export const navLink = [
   },
   {
     name: "THE FACILITIES",
-    zhName: "首席配備",
+    zhName: "配備豐質",
     child: [
       {
         pathName: "area",

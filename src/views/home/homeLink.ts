@@ -1,27 +1,27 @@
 export const homeLink = [
   {
     name: "area",
-    zh: "首選地段",
+    zh: "地段豐域",
     en: "THE AREA",
   },
   {
     name: "area",
-    zh: "首景地標",
+    zh: "生態豐綻",
     en: "THE LANDMARK",
   },
   {
     name: "area",
-    zh: "首席團隊",
+    zh: "團隊豐藝",
     en: "THE TEAM",
   },
   {
     name: "area",
-    zh: "首席建築",
+    zh: "建築豐馥",
     en: "THE BUILDING",
   },
   {
     name: "area",
-    zh: "首席配備",
+    zh: "配備豐質",
     en: "THE FACILITIES",
   },
 ];

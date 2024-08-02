@@ -1,0 +1,25 @@
+.imgBox {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+.zoom {
+  display: flex;
+  pointer-events: auto;
+  padding: 0.6vw;
+}
+
+.zoom img {
+  width: 3vw;
+  margin: 0.25vw 0;
+  cursor: pointer;
+}

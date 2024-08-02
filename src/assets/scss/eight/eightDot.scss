@@ -1,0 +1,27 @@
+.eightTag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2vw;
+  height: 2vw;
+  background-color: aliceblue;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.eight-dot-1 {
+  top: 7%;
+  left: 59%;
+}
+.eight-dot-2 {
+  top: 19%;
+  left: 52%;
+}
+.eight-dot-3 {
+  top: 25%;
+  left: 60%;
+}
+.eight-dot-active {
+  background-color: red;
+  transition: all 0.5s;
+}

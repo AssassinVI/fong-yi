@@ -19,18 +19,18 @@ const fadeOut = computed(() => {
 
 const handleClick = () => {
   styleSet.value = true;
-  if (document.documentElement.requestFullscreen) {
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.requestFullscreen) {
-    /* Firefox */
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.requestFullscreen) {
-    /* Chrome, Safari and Opera */
-    document.documentElement.requestFullscreen();
-  } else if (document.documentElement.requestFullscreen) {
-    /* IE/Edge */
-    document.documentElement.requestFullscreen();
-  }
+  // if (document.documentElement.requestFullscreen) {
+  //   document.documentElement.requestFullscreen();
+  // } else if (document.documentElement.requestFullscreen) {
+  //   /* Firefox */
+  //   document.documentElement.requestFullscreen();
+  // } else if (document.documentElement.requestFullscreen) {
+  //   /* Chrome, Safari and Opera */
+  //   document.documentElement.requestFullscreen();
+  // } else if (document.documentElement.requestFullscreen) {
+  //   /* IE/Edge */
+  //   document.documentElement.requestFullscreen();
+  // }
   emits("home-Animation");
 };
 </script>

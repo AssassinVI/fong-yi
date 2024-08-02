@@ -1,9 +1,7 @@
 <template>
   <div id="area-Page">
     <Nav />
-    <div class="example">
-      <img src="../../assets/img/example/example.png" alt="example" />
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 

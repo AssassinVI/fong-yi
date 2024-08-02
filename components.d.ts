@@ -7,6 +7,11 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AreaEightFancyBox: typeof import('./src/components/fancybox/AreaEightFancyBox.vue')['default']
+    Back: typeof import('./src/components/back/Back.vue')['default']
+    EightDot: typeof import('./src/components/eight/EightDot.vue')['default']
+    EightList: typeof import('./src/components/eight/EightList.vue')['default']
+    Example: typeof import('./src/components/example/Example.vue')['default']
     FadeIn: typeof import('./src/components/transition/FadeIn.vue')['default']
     FadeInItem: typeof import('./src/components/transition/FadeInItem.vue')['default']
     FullScreen: typeof import('./src/components/fullscreen/FullScreen.vue')['default']
@@ -16,5 +21,8 @@ declare module 'vue' {
     RightToLeft: typeof import('./src/components/transition/RightToLeft.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScaleDrag: typeof import('./src/components/scaledrag/ScaleDrag.vue')['default']
+    TransMask: typeof import('./src/components/trans/TransMask.vue')['default']
+    WindowClose: typeof import('./src/components/close/WindowClose.vue')['default']
   }
 }
