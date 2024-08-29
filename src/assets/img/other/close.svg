@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.57 56.57">
+  <g id="_圖層_2-2" data-name=" 圖層 2">
+    <g id="_圖層_1-2" data-name=" 圖層 1-2">
+      <g>
+        <rect width="56.57" height="56.57" fill="#1c731e"/>
+        <line x1="12.34" y1="13.76" x2="41.39" y2="42.81" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+        <line x1="41.39" y1="13.76" x2="12.34" y2="42.81" fill="none" stroke="#fff" stroke-miterlimit="10"/>
+      </g>
+    </g>
+  </g>
+</svg>

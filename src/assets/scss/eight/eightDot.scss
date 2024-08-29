@@ -3,25 +3,91 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 2vw;
-  height: 2vw;
-  background-color: aliceblue;
-  transition: all 0.5s;
   cursor: pointer;
+  z-index: 10;
+  .eightTag-container {
+    transition: all 0.5s;
+    position: relative;
+    animation-fill-mode: none;
+    path {
+      fill: #5c5d5d;
+      transition: all 0.5s;
+    }
+    .eightTag-tagImg {
+      width: 0.5vw;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 36%;
+      left: 50%;
+    }
+    svg {
+      width: 2vw;
+      height: 2vw;
+    }
+  }
 }
 .eight-dot-1 {
   top: 7%;
-  left: 59%;
+  left: 57%;
 }
 .eight-dot-2 {
-  top: 19%;
-  left: 52%;
+  top: 15.5%;
+  left: 49%;
 }
 .eight-dot-3 {
-  top: 25%;
-  left: 60%;
+  top: 19%;
+  left: 57.5%;
+}
+.eight-dot-4 {
+  top: 33%;
+  left: 54%;
+}
+.eight-dot-5 {
+  top: 65%;
+  left: 69%;
+}
+.eight-dot-6 {
+  top: 62%;
+  left: 72%;
+}
+.eight-dot-7 {
+  top: 73%;
+  left: 64.5%;
+}
+.eight-dot-8 {
+  top: 89%;
+  left: 59%;
+}
+.eight-dot-9 {
+  top: 67%;
+  left: 46%;
+}
+.eight-dot-10 {
+  top: 76%;
+  left: 86%;
+  .eightTag-tagImg {
+    width: 1vw !important;
+  }
 }
 .eight-dot-active {
-  background-color: red;
-  transition: all 0.5s;
+  .eightTag-container {
+    animation: upDown 1s infinite;
+    animation-fill-mode: none;
+    transition: all 0.5s;
+    path {
+      fill: #bbab1e;
+      transition: all 0.5s;
+    }
+  }
+}
+@keyframes upDown {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

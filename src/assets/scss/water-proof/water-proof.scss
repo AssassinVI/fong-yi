@@ -1,0 +1,24 @@
+#water-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 90%;
+  .water-proof-left {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 62%;
+    .water-proof-left-img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}

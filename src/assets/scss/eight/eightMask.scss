@@ -1,0 +1,135 @@
+.eight-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 106%;
+  z-index: 99;
+  overflow: hidden;
+  .eight-mask-mask {
+    height: 100%;
+  }
+  .eight-mask-background {
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(62, 58, 57, 1);
+    transition: all 0.5s;
+    img {
+      height: 100%;
+    }
+  }
+  .eight-mask-close {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 2vw;
+    height: 2vw;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .eight-mask-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35vw;
+  }
+}
+.eight-mask-house {
+  .eight-mask-mask {
+    // mask-image: url("../../img/eight/eight-House-mask.png");
+    // mask-repeat: no-repeat;
+    // mask-size: 115% 120%;
+    // mask-position: 0vw 40%;
+    transform-origin: 47% 29%;
+  }
+  .eight-mask-text {
+    top: 20.25vw;
+    left: 4%;
+  }
+}
+
+.eight-mask-eco {
+  .eight-mask-mask {
+    // mask-image: url("../../img/eight/eight-Eco-mask.png");
+    // mask-repeat: no-repeat;
+    // mask-size: 104%;
+    // mask-position: -1vw 0%;
+    transform-origin: 60% 13%;
+  }
+  .eight-mask-text {
+    top: 27.5vw;
+    left: 8%;
+  }
+}
+
+.eight-mask-edu {
+  .eight-mask-mask {
+    // mask-image: url("../../img/eight/eight-Edu-mask.png");
+    // mask-repeat: no-repeat;
+    // mask-size: 102%;
+    // mask-position: 100% 100%;
+    transform-origin: 85% 73%;
+  }
+  .eight-mask-text {
+    top: 27.5vw;
+    left: 10%;
+  }
+}
+
+.eight-mask-cul {
+  .eight-mask-mask {
+    // mask-image: url("../../img/eight/eight-Cul-mask.png");
+    // mask-repeat: no-repeat;
+    // mask-size: 102%;
+    // mask-position: 100% 40%;
+
+    transform-origin: 85% 43%;
+  }
+  .eight-mask-background {
+    // mask-image: radial-gradient(
+    //   ellipse at center,
+    //   rgba(0, 0, 0, 0) 0%,
+    //   rgba(0, 0, 0, 0) 19%,
+    //   rgba(0, 0, 0, 0) 32%,
+    //   rgba(0, 0, 0, 1) 100%
+    // );
+    // mask-size: 100%;
+    // mask-position: 100% 100%;
+    // mask-repeat: no-repeat;
+  }
+  .eight-mask-text {
+    top: 25.5vw;
+    left: 12%;
+  }
+}
+.eight-mask-cre {
+  .eight-mask-mask {
+    // // mask-image: url("../../img/eight/eight-Cre-mask.png");
+    // mask-repeat: no-repeat;
+    // mask-size: 102%;
+    // mask-position: 0vw 72%;
+    transform-origin: 58% 71%;
+  }
+  .eight-mask-text {
+    position: absolute;
+    top: 28.5vw;
+    left: 12%;
+  }
+}
+.eight-mask-background-active {
+  .eight-mask-mask {
+    animation: scale 1s;
+    animation-fill-mode: none;
+    transition: all 0.5s;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

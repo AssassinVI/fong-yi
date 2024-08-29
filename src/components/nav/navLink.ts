@@ -4,7 +4,7 @@ export const navLink = [
     zhName: "地段豐域",
     child: [
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "國際水湳",
       },
       {
@@ -22,15 +22,15 @@ export const navLink = [
     zhName: "生態豐綻",
     child: [
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
     ],
@@ -40,15 +40,15 @@ export const navLink = [
     zhName: "團隊豐藝",
     child: [
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "eight",
         zhName: "我是連結",
       },
     ],
@@ -58,16 +58,16 @@ export const navLink = [
     zhName: "建築豐馥",
     child: [
       {
-        pathName: "area",
+        pathName: "featureMaterials",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "featureMaterials",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
-        zhName: "我是連結",
+        pathName: "floorPlan",
+        zhName: "floor",
       },
     ],
   },
@@ -76,15 +76,15 @@ export const navLink = [
     zhName: "配備豐質",
     child: [
       {
-        pathName: "area",
+        pathName: "waterProof",
         zhName: "我是連結",
       },
       {
-        pathName: "area",
+        pathName: "waterProof",
         zhName: "我是連結",
       },
       {
-        pathName: "home",
+        pathName: "waterProof",
         zhName: "我是連結",
       },
     ],

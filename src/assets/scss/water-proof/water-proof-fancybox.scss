@@ -1,0 +1,96 @@
+.water-proof-swiper-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding-top: 5vw;
+  z-index: 99;
+  .swiper-main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vw;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: black;
+      border: none;
+      background-color: transparent;
+      top: 90%;
+      &::after {
+        text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .swiper-button-next {
+      right: 13%;
+    }
+    .swiper-button-prev {
+      left: 83%;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: white;
+    }
+    .swiper {
+      width: 45vw;
+      margin-inline: 0;
+      margin-right: 4%;
+    }
+    .swiper-para {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      letter-spacing: 2px;
+      width: 20vw;
+      .swiper-para-h2 {
+        color: #075c33;
+        font-size: var(--mainSize);
+      }
+      .swiper-para-p {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: var(--navSize);
+        margin-top: 0.5vw;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.5s;
+        // &::after {
+        //   content: "";
+        //   position: absolute;
+        //   top: 0;
+        //   left: -105%;
+        //   height: 100%;
+        //   width: 100%;
+        //   background-color: #e4d8c4;
+        //   z-index: -1;
+        //   transition: all 0.5s;
+        // }
+        span {
+          color: black;
+        }
+        .swiper-para-dot {
+          width: 7.5px;
+          height: 7.5px;
+          background-color: #b4a388;
+          margin-right: 0.25vw;
+        }
+        .swiper-para-p-bg {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: -105%;
+          background-color: #e4d8c4;
+          z-index: -1;
+          transition: all 0.5s;
+        }
+        .swiper-para-p-bg-active {
+          left: 0vw;
+          transition: all 0.5s;
+        }
+      }
+    }
+  }
+}

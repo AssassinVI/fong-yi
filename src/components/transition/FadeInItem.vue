@@ -21,4 +21,7 @@
 .fade-item-leave-active {
   transition: all 0.75s;
 }
+.fade-item-leave-active {
+  position: absolute;
+}
 </style>

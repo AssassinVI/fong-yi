@@ -4,7 +4,15 @@ import HomePage from "@/views/home/HomePage.vue";
 import AreaPage from "@/views/area/AreaPage.vue";
 import AreaEightPage from "@/views/area/eight/AreaEightPage.vue";
 import AreaTransPage from "@/views/area/trans/AreaTransPage.vue";
-import Example from "@/components/example/Example.vue";
+import SpacePage from "@/views/space/SpacePage.vue";
+import SpaceWaterProofPage from "@/views/space/waterProof/SpaceWaterProofPage.vue";
+import FeaturePage from "@/views/feature/FeaturePage.vue";
+import FeatureMaterialPage from "@/views/feature/material/FeatureMaterialPage.vue";
+import FeatureMaterialInPage from "@/views/feature/materialInner/FeatureMaterialInPage.vue";
+import FloorPlanPage from "@/views/feature/floorPlan/FloorPlanPage.vue";
+import FloorPlanInPage from "@/views/feature/floorPlanIn/FloorPlanInPage.vue";
+import LoanPage from "@/views/loan/LoanPage.vue";
+import ErrorPage from "@/views/error/ErrorPage.vue";
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -20,11 +28,6 @@ const router = createRouter({
       children: [
         {
           path: "/",
-          name: "area",
-          component: Example,
-        },
-        {
-          path: "/eight",
           name: "eight",
           component: AreaEightPage,
         },
@@ -34,6 +37,53 @@ const router = createRouter({
           component: AreaTransPage,
         },
       ],
+    },
+    {
+      path: "/space",
+      component: SpacePage,
+      children: [
+        {
+          path: "/",
+          name: "waterProof",
+          component: SpaceWaterProofPage,
+        },
+      ],
+    },
+    {
+      path: "/feature",
+      component: FeaturePage,
+      children: [
+        {
+          path: "/",
+          name: "featureMaterials",
+          component: FeatureMaterialPage,
+        },
+        {
+          path: "/inner",
+          name: "featureMaterialsIn",
+          component: FeatureMaterialInPage,
+        },
+        {
+          path: "/floorplan",
+          name: "floorPlan",
+          component: FloorPlanPage,
+        },
+        {
+          path: "/floorinner",
+          name: "floorInner",
+          component: FloorPlanInPage,
+        },
+      ],
+    },
+    {
+      path: "/loan",
+      name: "loan",
+      component: LoanPage,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "error",
+      component: ErrorPage,
     },
   ],
 });

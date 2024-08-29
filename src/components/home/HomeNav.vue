@@ -2,7 +2,6 @@
   <router-link :to="{ name: props.nav }" class="home-link-item">
     <span class="home-link-span">
       <p>{{ props.zh }}</p>
-      <p>{{ props.en }}</p>
     </span>
   </router-link>
 </template>

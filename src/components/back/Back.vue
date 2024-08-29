@@ -7,10 +7,13 @@
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(["toggle"]);
+const toggleFn = inject<(val?: string) => void | undefined>("toggle");
+// const emits = defineEmits(["toggle"]);
 
 const handleClick = () => {
-  emits("toggle");
+  if (toggleFn) {
+    toggleFn();
+  }
 };
 </script>
 

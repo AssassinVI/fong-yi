@@ -1,0 +1,40 @@
+#featureMaterialPage {
+  height: 92%;
+  position: relative;
+  background-color: white;
+  .feature-material-title {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: absolute;
+    top: 21%;
+    left: 8%;
+    h1 {
+      font-size: 2.5vw;
+      font-family: var(--cor);
+      font-weight: 500;
+    }
+    .feature-material-line {
+      background-color: black;
+      width: 3vw;
+      height: 1px;
+      margin-top: 1vw;
+    }
+  }
+  .imgBox {
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    width: 70%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(40, 1fr);
+  }
+  .material-left-bottom-img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+  }
+}

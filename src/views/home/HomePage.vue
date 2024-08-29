@@ -7,10 +7,9 @@
       muted
       playsinline
     ></video>
-    <FullScreen
-      :animationStart="animationStart"
-      @home-Animation="homeAnimation"
-    />
+
+    <FullScreen ref="fullScreenRef" @home-Animation="homeAnimation" />
+
     <div class="home-in" :class="{ show }" ref="homebgRef">
       <div class="home-bg">
         <img src="../../assets/img/home/home-bg-03.png" alt="home-bg" />
@@ -58,7 +57,16 @@
         </RightToLeft>
       </div>
     </div>
-    <WindowClose />
+    <div class="home-skip" ref="skipRef">
+      <span class="home-close-in" @click="handleClose">
+        <div class="window-line">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+        </div>
+      </span>
+      <span class="home-skip-line">|</span>
+      <span class="home-skip-in" @click="skipAnimation">SKIP</span>
+    </div>
   </article>
 </template>
 
@@ -66,11 +74,21 @@
 import gsap from "gsap";
 import { nanoid } from "nanoid";
 import { homeLink } from "./homeLink";
+import { useAnimationTimeStore } from "@/store/animationStore";
 import FullScreen from "@/components/fullscreen/FullScreen.vue";
 import HomeNav from "@/components/home/HomeNav.vue";
 import RightToLeft from "@/components/transition/RightToLeft.vue";
-import WindowClose from "@/components/close/WindowClose.vue";
 import "@/assets/scss/home/home.scss";
+
+const route = useRoute();
+
+const store = useAnimationTimeStore();
+
+//第一cut
+const fullScreenRef = ref();
+
+//skip
+const skipRef = ref();
 
 //背景
 const homebgRef = ref(null);
@@ -87,36 +105,56 @@ const titleIcon = ref(null);
 //navBar切換
 const barShow = ref(false);
 
+//網址
+const position = ref();
+
 const toggleBar = () => {
   barShow.value = !barShow.value;
 };
 
-const animationStart = ref(false);
+const animationStart = ref(true);
 
 const show = computed(() => {
   return animationStart.value ? "show" : "";
 });
 
+let homeTl = gsap.timeline();
 const homeAnimation = () => {
-  const homeTl = gsap.timeline();
-
+  animationStart.value = false;
   homeTl
-    .to(homebgRef.value, {
-      maskPosition: "-27vw 40%",
-      duration: 5,
+    .to(skipRef.value, {
+      opacity: 1,
+      duration: 0.01,
     })
-    .from(houseRef.value, { maskPosition: "50% 65%", duration: 3 }, "<+1")
+    .to(
+      fullScreenRef.value.full,
+      {
+        opacity: 0,
+        display: "none",
+        duration: 1,
+      },
+      "<"
+    )
+    .to(
+      homebgRef.value,
+      {
+        maskPosition: "-27vw 40%",
+        duration: 2,
+      },
+      "<+0.25"
+    )
+    .from(houseRef.value, { maskPosition: "50% 65%", duration: 1.25 }, "<+0.75")
     .fromTo(
       houseRef.value,
       { opacity: 0, filter: "blur(15px) brightness(3)" },
-      { opacity: 1, filter: "blur(0px) brightness(1)", duration: 3 },
-      "<+1"
+      { opacity: 1, filter: "blur(0px) brightness(1)", duration: 1.25 },
+      "<+0.75"
     )
     .from(
       houseRef.value,
       {
         scale: 1.5,
-        duration: 1.5,
+        duration: 0.75,
       },
       "<"
     )
@@ -125,16 +163,16 @@ const homeAnimation = () => {
       {
         x: "-5%",
         opacity: 0,
-        duration: 1.5,
+        duration: 0.75,
       },
-      "<+1"
+      "<+0.5"
     )
     .from(
       titleEn.value,
       {
         x: "5%",
         opacity: 0,
-        duration: 1.5,
+        duration: 0.75,
       },
       "<+0.25"
     )
@@ -142,11 +180,27 @@ const homeAnimation = () => {
       titleIcon.value,
       {
         opacity: 0,
-        duration: 1.5,
+        duration: 0.75,
       },
       "<+0.5"
     );
 };
+
+const skipAnimation = () => {
+  homeTl.progress(1);
+};
+
+const handleClose = () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  }
+};
+
+onMounted(() => {
+  position.value = route.name;
+
+  store.setHomeEnd(position.value);
+});
 </script>
 
 <style scoped></style>

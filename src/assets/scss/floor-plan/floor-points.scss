@@ -1,0 +1,379 @@
+.floor-point {
+  position: absolute;
+  cursor: pointer;
+
+  .floor-green-point {
+    width: 1.75vw;
+    height: 1.75vw;
+    p {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      background-color: #256634;
+      z-index: 5;
+    }
+    .radiation {
+      top: 8%;
+      opacity: 0;
+      transition: opacity 0.5s;
+      .circle {
+        background-color: #289b43;
+      }
+    }
+  }
+  &:hover {
+    .radiation {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+
+  .floor-red-point-img {
+    position: relative;
+    width: 3vw;
+    padding: 1vw;
+    z-index: 12;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+  .floor-red-stop {
+    .radiation {
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+  }
+  .floor-red-start {
+    .radiation {
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+}
+//1F
+.point-1-1F {
+  top: 52%;
+  left: 31%;
+}
+.point-2-1F {
+  top: 58%;
+  left: 39%;
+}
+.point-3-1F {
+  top: 34%;
+  left: 51%;
+}
+.point-4-1F {
+  top: 25%;
+  left: 62%;
+}
+.point-5-1F {
+  top: 39%;
+  left: 58%;
+}
+.point-6-1F {
+  top: 9.5%;
+  left: 72.5%;
+}
+.point-7-1F {
+  top: 39.5%;
+  left: 70.5%;
+}
+
+.radiation {
+  position: absolute;
+  left: 0;
+  top: 1vw;
+  right: 0;
+  margin: 0 auto;
+  width: 1.5vw;
+  height: 1.5vw;
+  z-index: 0;
+  .circle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(229, 28, 28, 0.4862745098);
+    animation-name: radiation;
+    animation-duration: 1.35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  > :nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  > :nth-child(3) {
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes radiation {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+//2F
+.a1-2F {
+  top: 86%;
+  left: 13%;
+}
+.a2-2F {
+  top: 63%;
+  left: 11%;
+}
+.a3-2F {
+  top: 47%;
+  left: 13%;
+}
+.a5-2F {
+  top: 44%;
+  left: 17.75%;
+}
+.a6-2F {
+  top: 47%;
+  left: 32.25%;
+}
+.a9-2F {
+  top: 87.75%;
+  left: 17.75%;
+}
+.b1-2F {
+  top: 47%;
+  left: 67%;
+}
+.b2-2F {
+  top: 21.75%;
+  left: 61%;
+}
+.b3-2F {
+  top: 15%;
+  left: 64%;
+}
+.b5-2F {
+  top: 12%;
+  left: 79.25%;
+}
+.b6-2F {
+  top: 6%;
+  left: 86.5%;
+}
+.b7-2F {
+  top: 21.75%;
+  left: 92.5%;
+}
+.b8-2F {
+  top: 47%;
+  left: 86.5%;
+}
+.b9-2F {
+  top: 51%;
+  left: 79.25%;
+}
+//3F
+.a1-3F {
+  top: 86%;
+  left: 13%;
+}
+.a2-3F {
+  top: 63%;
+  left: 11%;
+}
+.a3-3F {
+  top: 47%;
+  left: 13%;
+}
+.a5-3F {
+  top: 44%;
+  left: 17.75%;
+}
+.a6-3F {
+  top: 47%;
+  left: 32.25%;
+}
+.a7-3F {
+  top: 63.25%;
+  left: 38%;
+}
+.a8-3F {
+  top: 87%;
+  left: 32.5%;
+}
+.a9-3F {
+  top: 87.75%;
+  left: 17.75%;
+}
+.b1-3F {
+  top: 47%;
+  left: 67%;
+}
+.b2-3F {
+  top: 21.75%;
+  left: 61%;
+}
+.b3-3F {
+  top: 15%;
+  left: 64%;
+}
+.b5-3F {
+  top: 12%;
+  left: 79.25%;
+}
+.b6-3F {
+  top: 6%;
+  left: 86.5%;
+}
+.b7-3F {
+  top: 21.75%;
+  left: 92.5%;
+}
+.b8-3F {
+  top: 47%;
+  left: 86.5%;
+}
+.b9-3F {
+  top: 51%;
+  left: 79.25%;
+}
+//4-9F
+.a1-4F-9F {
+  top: 86%;
+  left: 13%;
+}
+.a2-4F-9F {
+  top: 63%;
+  left: 11%;
+}
+.a3-4F-9F {
+  top: 47%;
+  left: 13%;
+}
+.a5-4F-9F {
+  top: 44%;
+  left: 17.75%;
+}
+.a6-4F-9F {
+  top: 47%;
+  left: 32.25%;
+}
+.a7-4F-9F {
+  top: 63.25%;
+  left: 38%;
+}
+.a8-4F-9F {
+  top: 87%;
+  left: 32.5%;
+}
+.a9-4F-9F {
+  top: 87.75%;
+  left: 17.75%;
+}
+.b1-4F-9F {
+  top: 47%;
+  left: 67%;
+}
+.b2-4F-9F {
+  top: 21.75%;
+  left: 61%;
+}
+.b3-4F-9F {
+  top: 15%;
+  left: 64%;
+}
+.b5-4F-9F {
+  top: 12%;
+  left: 79.25%;
+}
+.b6-4F-9F {
+  top: 6%;
+  left: 86.5%;
+}
+.b7-4F-9F {
+  top: 21.75%;
+  left: 92.5%;
+}
+.b8-4F-9F {
+  top: 47%;
+  left: 86.5%;
+}
+.b9-4F-9F {
+  top: 51%;
+  left: 79.25%;
+}
+//10F
+.a1-10F {
+  top: 86%;
+  left: 13%;
+}
+.a2-10F {
+  top: 63%;
+  left: 11%;
+}
+.a3-10F {
+  top: 47%;
+  left: 13%;
+}
+.a5-10F {
+  top: 44%;
+  left: 17.75%;
+}
+.a6-10F {
+  top: 47%;
+  left: 32.25%;
+}
+.a7-10F {
+  top: 63.25%;
+  left: 38%;
+}
+.a8-10F {
+  top: 87%;
+  left: 32.5%;
+}
+.a9-10F {
+  top: 87.75%;
+  left: 17.75%;
+}
+.b1-10F {
+  top: 47%;
+  left: 67%;
+}
+.b2-10F {
+  top: 21.75%;
+  left: 61%;
+}
+.b3-10F {
+  top: 15%;
+  left: 64%;
+}
+.b5-10F {
+  top: 12%;
+  left: 79.25%;
+}
+.b6-10F {
+  top: 6%;
+  left: 86.5%;
+}
+.b7-10F {
+  top: 21.75%;
+  left: 92.5%;
+}
+.b8-10F {
+  top: 47%;
+  left: 86.5%;
+}
+.b9-10F {
+  top: 51%;
+  left: 79.25%;
+}

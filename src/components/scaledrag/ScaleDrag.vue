@@ -1,6 +1,6 @@
 <template>
   <div
-    class="imgBox"
+    class="imgBoxIn"
     @mousedown="onMouseDown"
     @mousemove="onMouseMove"
     @mouseup="onMouseUp"
@@ -22,17 +22,8 @@
     v-if="maxRatio !== 1"
     :style="{ display: 'flex', pointerEvents: 'auto', padding: '0.6vw' }"
   >
-    <!-- <input
-        type="range"
-        name="scaleImg"
-        id="scaleImg"
-        min="1"
-        max="3"
-        :step="0.01"
-        v-model="scaleRatio"
-      /> -->
-    <img src="../../assets/img/other/001-plus-button.svg" @click="zoomIn" />
-    <img src="../../assets/img/other/002-minus-button.svg" @click="zoomOut" />
+    <img src="../../assets/img/other/plus.svg" @click="zoomIn" />
+    <img src="../../assets/img/other/minus.svg" @click="zoomOut" />
   </div>
 </template>
 
@@ -46,7 +37,10 @@ interface InitPosition {
 const props = defineProps<{
   maxRatio: number;
   init: InitPosition;
+  showText?: boolean;
 }>();
+
+const emits = defineEmits(["show-text", "hide-text"]);
 
 const scaleRatio = ref(1);
 const x = ref(0);
@@ -66,6 +60,9 @@ const zoomIn = (e: MouseEvent) => {
   e.preventDefault();
   if (scaleRatio.value < props.maxRatio) {
     scaleRatio.value += 1;
+    x.value = props.init.x;
+    y.value = props.init.y;
+    emits("hide-text");
     // scaleRatio.value = Math.min(scaleRatio.value + 0.1, props.maxRatio);
   }
 };
@@ -75,6 +72,7 @@ const zoomOut = (e: MouseEvent) => {
   e.preventDefault();
   if (scaleRatio.value > 1) {
     scaleRatio.value -= 1;
+    emits("show-text");
   }
   if (scaleRatio.value < 2) {
     x.value = 0;
@@ -139,8 +137,6 @@ const onTouchStart = (e: TouchEvent) => {
   mapRect.height = dragTarget.value?.getBoundingClientRect().height ?? 0;
   boxRect.width = imgBox.value?.getBoundingClientRect().width ?? 0;
   boxRect.height = imgBox.value?.getBoundingClientRect().height ?? 0;
-  console.log("start");
-  console.log(mapRect.width);
 };
 
 const onTouchMove = (e: TouchEvent) => {

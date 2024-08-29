@@ -3,7 +3,7 @@
     <div class="area-trans-map">
       <div class="trans-mask trans-mask-1">
         <img
-          src="../../../assets/img/example/trans-map-mask.png"
+          src="../../../assets/img/example/trans-map.png"
           alt="trans-map-mask"
         />
       </div>
@@ -19,12 +19,6 @@
 
 <script setup lang="ts">
 import "@/assets/scss/trans/areaTrans.scss";
-
-const transTag = ref(0);
-
-const handleClick = (val: number) => {
-  transTag.value = val;
-};
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>

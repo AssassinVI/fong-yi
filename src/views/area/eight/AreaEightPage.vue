@@ -1,48 +1,69 @@
 <template>
   <div id="area-eight">
     <div class="area-eight-map">
-      <ScaleDrag :maxRatio="2" :init="{ x: 100, y: 100 }">
+      <FadeIn> <EightLeft v-show="showText" /></FadeIn>
+      <FadeInItem>
+        <div
+          class="eight-mask-close"
+          v-show="maskClass.length !== 0"
+          @click="
+            () => {
+              showMask('');
+            }
+          "
+        >
+          <img
+            src="../../../assets/img/eight/mask-close.svg"
+            alt="mask-close"
+          /></div
+      ></FadeInItem>
+      <ScaleDrag
+        :maxRatio="2"
+        :init="{ x: 100, y: 100 }"
+        :showText="showText"
+        @show-text="showLeftText"
+        @hide-text="hideLeftText"
+      >
         <div class="container">
+          <FadeInItem>
+            <EightMask
+              v-for="item in EightTitleContent"
+              :key="item.className"
+              :textImg="item.textImg"
+              :class="item.className"
+              :maskClass="maskClass"
+              :maskImg="item.maskImg"
+              @show-mask="showMask"
+              v-show="item.className === maskClass"
+          /></FadeInItem>
           <div class="anchor-area">
             <div class="anchor-area-map">
+              <!-- <video
+                class="video-test"
+                src="../../../assets/video/img2024041709370816.mp4"
+                autoplay
+                loop
+                muted
+              ></video> -->
+              <!-- <img
+                class="lighter"
+                src="../../../assets/img/other/light.png"
+                alt="light"
+              /> -->
               <img
                 class="imgBox"
                 src="../../../assets/img/eight/eight-map.png"
                 alt="eight-map"
               />
-              <svg
-                id="_圖層_2"
-                data-name="圖層 2"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 461.62 870.38"
-              >
-                <rect
-                  x="0"
-                  y="-10"
-                  width="188.9"
-                  height="134.26"
-                  fill="#231815"
-                >
-                  <animateMotion
-                    dur="5s"
-                    repeatCount="indefinite"
-                    path="M.44,.23S169.16,326.03,182.5,357.79c13.34,31.75,26.04,83.05,26.04,113.92s14.4,398.18,14.4,398.18h238.68"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    repeatDur="indefinite"
-                    values="1;1;0"
-                    keyTimes="0;0.9;1"
-                    dur="5s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-              </svg>
+              <Glow />
+              <EightTrain />
             </div>
+
             <EightDot
-              v-for="item in test"
+              v-for="item in EightDotContent"
               :key="item.key"
               :tag="item.tag"
+              :tagImg="item.tagImg"
               :className="item.class"
               :hoverTag="hoverTag"
               @handle-over="handleOver"
@@ -52,76 +73,91 @@
           </div>
         </div>
       </ScaleDrag>
+      <FadeIn>
+        <div class="area-eight-map-bottom" v-show="showText">
+          <img
+            src="../../../assets/img/eight/eight-bottom-left.png"
+            alt="eight-bottom-left"
+          /></div
+      ></FadeIn>
     </div>
     <div class="area-eight-left">
-      <EightList
-        v-for="item in EightListContet"
-        :key="item.tag"
-        :id="item.tag"
-        :mainTitle="item.mainTitle"
-        :lineImg="item.lineImg"
-        :content="item.content"
-      />
-      <!-- <ul>
-        <li
-          v-for="item in test"
+      <div class="area-eight-left-top">
+        <EightTitle
+          v-for="item in EightTitleContent"
+          :key="item.tag"
+          :tag="item.tag"
+          :name="item.zhName"
+          :class="item.className"
+          :maskClass="maskClass"
+          :maskImg="item.maskImg"
+          @show-mask="showMask"
+        />
+      </div>
+      <div class="area-eight-left-bottom">
+        <EightList
+          v-for="item in EightListContet"
           :key="item.key"
-          :class="hoverTag === item.tag ? 'li-active' : ''"
-          @mouseover="() => handleOver(item.tag)"
-          @mouseout="handleOut"
-          @click="() => toggleBox(item.tag)"
-        >
-          {{ item.name }}
-        </li>
-      </ul> -->
+          :tag="item.bigTag"
+          :mainTitle="item.mainTitle"
+          :lineImg="item.lineImg"
+          :content="item.content"
+          :hoverTag="hoverTag"
+          @handle-over="handleOver"
+          @handle-out="handleOut"
+          @toggle-box="toggleBox"
+        />
+      </div>
     </div>
-    <Teleport to="body">
-      <FadeIn
-        ><AreaEightFancyBox
-          v-if="showbox"
-          :boxContent="boxContent"
-          @toggle="toggleBox"
-      /></FadeIn>
-    </Teleport>
+
+    <FadeIn
+      ><AreaEightFancyBox
+        v-if="showbox"
+        :boxContent="boxContent"
+        @toggle="toggleBox"
+    /></FadeIn>
   </div>
 </template>
 
 <script setup lang="ts">
-import { nanoid } from "nanoid";
 import ScaleDrag from "@/components/scaledrag/ScaleDrag.vue";
 import EightDot from "@/components/eight/EightDot.vue";
 import FadeIn from "@/components/transition/FadeIn.vue";
+import FadeInItem from "@/components/transition/FadeInItem.vue";
 import AreaEightFancyBox from "@/components/fancybox/AreaEightFancyBox.vue";
 import EightList from "@/components/eight/EightList.vue";
-import { EightContent, EightListContet } from "./EightContent";
+import EightTitle from "@/components/eight/EightTitle.vue";
+import EightLeft from "@/components/eight/EightLeft.vue";
+import EightMask from "@/components/eight/EightMask.vue";
+import EightTrain from "@/components/eight/EightTrain.vue";
+import Glow from "@/components/glow/Glow.vue";
+import {
+  EightContent,
+  EightListContet,
+  EightTitleContent,
+  EightDotContent,
+} from "./EightContent";
+import { useAnimationTimeStore } from "@/store/animationStore";
 import "@/assets/scss/eight/areaEight.scss";
 
-const test = [
-  {
-    tag: 1,
-    name: "水湳轉運中心",
-    class: "eight-dot-1",
-    key: nanoid(),
-  },
-  {
-    tag: 2,
-    name: "台中國際會展中心",
-    class: "eight-dot-2",
-    key: nanoid(),
-  },
-  {
-    tag: 3,
-    name: "台中綠美圖",
-    class: "eight-dot-3",
-    key: nanoid(),
-  },
-];
+const route = useRoute();
 
+const store = useAnimationTimeStore();
+
+//網址
+const position = ref();
+
+//地圖座標與清單的連動
 const hoverTag = ref(0);
 
+//顯示fancybox
 const showbox = ref(false);
-
+//fancybox內容物
 const boxContent = ref({});
+//左邊裝飾
+const showText = ref(true);
+//mask顯示
+const maskClass = ref("");
 
 //滑鼠移入
 const handleOver = (val: number) => {
@@ -132,6 +168,16 @@ const handleOut = () => {
   hoverTag.value = 0;
 };
 
+//顯示左邊裝飾
+const showLeftText = () => {
+  showText.value = true;
+};
+
+//隱藏左邊裝飾
+const hideLeftText = () => {
+  showText.value = false;
+};
+
 const toggleBox = (val?: number) => {
   if (val) {
     const filterContent = EightContent.filter((item) => item.id === val);
@@ -139,6 +185,60 @@ const toggleBox = (val?: number) => {
   }
   showbox.value = !showbox.value;
 };
+
+//遮罩顯示
+const showMask = (val: string) => {
+  maskClass.value = val;
+};
+
+onMounted(() => {
+  position.value = route.name;
+
+  store.setHomeEnd(position.value);
+});
+provide("toggle", toggleBox);
 </script>
 
-<style scoped></style>
+<style scoped>
+.third-page-bg {
+  position: relative;
+  width: 100%;
+}
+.third-page-bg .glowing {
+  position: absolute;
+  width: 2vw;
+  height: 36vw;
+  left: 35.52vw;
+  top: 25vw;
+  z-index: 5;
+  overflow: hidden;
+}
+@media all and (max-width: 820px) {
+  .third-page-bg .glowing {
+    width: 4vw;
+    height: 62vw;
+    left: 74.4vw;
+    top: 59vw;
+  }
+  .third-page-bg .glowing .phone {
+    display: block !important;
+  }
+  .third-page-bg .glowing .computer {
+    display: none !important;
+  }
+}
+@media all and (max-width: 500px) {
+  .third-page-bg .glowing {
+    left: 102vw;
+    width: 5vw;
+    top: 69vw;
+    height: 108vw;
+  }
+}
+
+@keyframes glow {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+  }
+}
+</style>

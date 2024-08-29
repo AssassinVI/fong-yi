@@ -23,7 +23,7 @@
       rgba(0, 0, 0, 0) 70%,
       rgba(0, 0, 0, 0) 100%
     );
-    mask-image: url("../../img/home/SVG/ 圖層 1-2.svg");
+    mask-image: url("@/assets/img/home/SVG/ 圖層 1-2.svg");
     mask-size: 160%;
     mask-position: -150vw 40%;
     mask-repeat: no-repeat;
@@ -89,11 +89,11 @@
       .home-green-in {
         width: 100%;
         height: 100%;
-        mask-image: url("../../img/home/home-green-mask.png");
+        mask-image: url("@/assets/img/home/home-green-mask.png");
         mask-size: 100%;
         mask-position: 0vw 0%;
         mask-repeat: no-repeat;
-        background: url("../../img/home/home-green-1.png");
+        background: url("@/assets/img/home/home-green-1.png");
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: 100%;
@@ -118,11 +118,11 @@
       .home-title-2 {
         width: 24vw;
         height: 8vw;
-        background: url("../../img/home/home-1.png");
+        background: url("@/assets/img/home/home-1.png");
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: 100%;
-        mask-image: url("../../img/home/home-1.png");
+        mask-image: url("@/assets/img/home/home-1.png");
         mask-size: 100%;
         mask-position: 100%;
         mask-repeat: no-repeat;
@@ -159,6 +159,65 @@
     }
     100% {
       transform: rotate(27deg) translateX(200%);
+    }
+  }
+  .home-skip {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    letter-spacing: 2px;
+    z-index: 200;
+    pointer-events: auto;
+    cursor: pointer;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 170px;
+    .window-line {
+      border-radius: 50%;
+      background-color: rgba(161, 161, 161, 0.671);
+      position: relative;
+      width: 2vw;
+      height: 2vw;
+      .line {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.75vw;
+        height: 2px;
+        background-color: white;
+        transform-origin: 50% 50%;
+      }
+      .line-1 {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      .line-2 {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+    }
+    .home-close-in {
+      position: relative;
+    }
+    .home-skip-line {
+      width: 1px;
+      height: 100%;
+      margin-right: 2px;
+    }
+    .home-skip-in {
+      position: relative;
+      // &::after {
+      //   content: "";
+      //   position: absolute;
+      //   left: -24%;
+      //   bottom: 10%;
+      //   width: 1px;
+      //   height: 20px;
+      //   background-color: black;
+      // }
     }
   }
 }

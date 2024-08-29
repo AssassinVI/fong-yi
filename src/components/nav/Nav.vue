@@ -8,8 +8,7 @@
         <div class="nav-left-text">
           <div class="nav-left-text-item" v-for="item in navLink" :key="nanoid">
             <span class="nav-link-span">
-              <p>{{ item.zhName }}</p>
-              <p>{{ item.name }}</p> </span
+              <p>{{ item.zhName }}</p> </span
             ><span class="nav-left-text-item-line"></span>
             <div class="nav-child">
               <NavChild
@@ -34,7 +33,6 @@
 <script setup lang="ts">
 import { nanoid } from "nanoid";
 import { navLink } from "./navLink";
-import NavChild from "@/components/nav/NavChild.vue";
 import "@/assets/scss/nav/nav.scss";
 </script>
 

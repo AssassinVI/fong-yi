@@ -1,0 +1,126 @@
+.swiper-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  padding-top: 5vw;
+  z-index: 99;
+  .video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    video {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      margin: auto;
+    }
+    img {
+      position: absolute;
+      top: 5vw;
+      right: 2vw;
+      width: 2vw;
+      height: 2vw;
+      cursor: pointer;
+    }
+  }
+  .swiper-main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7vw;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: white;
+      &::after {
+        text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
+      }
+    }
+    .swiper-pagination-bullet-active {
+      background-color: white;
+    }
+    .swiper {
+      width: 54vw;
+      margin-inline: 0;
+      margin-right: 4%;
+    }
+
+    .swiper-para {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      width: 35vw;
+      letter-spacing: 2px;
+      .area-eight-play {
+        z-index: 9;
+        cursor: pointer;
+      }
+      h1 {
+        width: 70%;
+        font-size: var(--bigTitle);
+        font-family: var(--cor);
+        font-weight: 500;
+        color: #6d6d6d;
+      }
+      h2 {
+        display: flex;
+        align-items: center;
+        width: 98%;
+        justify-content: space-between;
+        font-size: 1.65vw;
+        font-weight: 700;
+        font-family: var(--serif);
+        margin-top: 1.75vw;
+        color: #1c731e;
+      }
+      .swiper-para-p-en {
+        font-family: var(--lato);
+        font-weight: 400;
+        font-size: 0.65vw;
+        margin-top: 1vw;
+        color: #9e9e9f;
+      }
+      .swiper-para-p-zh {
+        font-family: var(--serif);
+        font-size: var(--navSize);
+        font-weight: 600;
+        color: black;
+      }
+      .swiper-para-p-zh-1 {
+        position: relative;
+        padding-top: 1.5vw;
+        line-height: 1.8;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 10%;
+          left: -12%;
+          height: 1px;
+          width: 110%;
+          background-color: #1c731e;
+        }
+      }
+      p:last-child {
+        margin-top: 1.5vw;
+      }
+    }
+  }
+  .area-eight-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+  }
+}
+.fancy-top-video {
+  z-index: 101;
+}

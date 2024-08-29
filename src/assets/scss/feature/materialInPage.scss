@@ -1,0 +1,87 @@
+#FeatureMaterialInPage {
+  height: 92%;
+  position: relative;
+  background-color: white;
+  .material-in-container {
+    width: 100%;
+    height: 100%;
+    .material-in-bath-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      .material-in-bath-left {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        letter-spacing: 2px;
+        margin-left: 5vw;
+        .material-in-bath-left-title {
+          font-size: 1.4vw;
+          font-family: var(--serif);
+          margin-top: 3vw;
+          color: #1c731e;
+        }
+        .material-in-bath-left-para {
+          font-family: var(--serif);
+          font-size: 0.8vw;
+          font-weight: 500;
+          line-height: 2.25;
+          text-align: center;
+          margin-top: 1.5vw;
+          color: black;
+        }
+        .material-in-bath-left-content {
+          display: flex;
+          margin-top: 3vw;
+          gap: 1.5vw;
+          .material-in-bath-primary,
+          .material-in-bath-secondary {
+            position: relative;
+            width: 24vw;
+            cursor: pointer;
+            z-index: 6;
+            .material-in-bath-name {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 1;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.35);
+
+              p {
+                font-family: var(--serif);
+                font-size: 0.9vw;
+                font-weight: 600;
+                padding: 0.5vw 0.75vw;
+                border: 1px solid white;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      .material-in-bath-right {
+        width: 41%;
+        height: 100%;
+        img {
+          height: 100%;
+        }
+      }
+    }
+    .material-in-fancy-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .material-in-left-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 45%;
+  }
+}

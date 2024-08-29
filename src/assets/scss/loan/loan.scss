@@ -1,0 +1,330 @@
+#loanPage {
+  .loan-main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 92%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 21;
+
+    .cal-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      flex-direction: column;
+    }
+    .cal-form-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .cal-title {
+      text-align: center;
+    }
+    .cal-form-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      margin-right: 1vw;
+      label {
+        width: 100%;
+        font-size: 0.9vw;
+      }
+      input {
+        width: 10vw;
+        background-color: #f2f2f2;
+        border: none;
+        margin-right: 0.5vw;
+        padding-left: 0.5vw;
+        font-size: 1.1vw;
+      }
+    }
+    .cal-form-button {
+      display: flex;
+      align-items: center;
+      margin-top: 2vw;
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 7.5vw;
+        height: 2.5vw;
+        font-size: 0.9vw;
+        border: 1px solid #c2a357;
+        cursor: pointer;
+        margin-right: 1vw;
+      }
+    }
+    .cal-result-container {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-evenly;
+      width: 90%;
+    }
+    .cal-result-left,
+    .cal-result-right {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 20%;
+    }
+    .cal-result-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 1vw;
+      margin-top: 1vw;
+      width: 100%;
+      > p:nth-child(1) {
+        width: 28%;
+        white-space: nowrap;
+      }
+      > p:nth-child(2) {
+        text-align: center;
+        width: 9vw;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 1px;
+          width: 100%;
+          background-color: black;
+        }
+      }
+    }
+  }
+  .cal-result-item-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  @media print {
+    body {
+      -webkit-print-color-adjust: exact;
+      background: #fff !important;
+    }
+    .loan-main {
+      width: 800px;
+      .cal-result-left,
+      .cal-result-right {
+        width: 45%;
+      }
+      .cal-form {
+        width: 800px;
+        .cal-form-container {
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-left: 70px;
+          .cal-form-item {
+            width: 250px;
+            margin-right: 30px;
+            margin-bottom: 15px;
+            label {
+              font-size: 18px;
+            }
+            input {
+              width: 200px;
+              font-size: 18px;
+            }
+            .cal-form-input {
+              font-size: 18px;
+            }
+          }
+        }
+        button {
+          display: none;
+        }
+      }
+
+      .cal-result-container {
+        width: 800px;
+        .cal-result-item {
+          font-size: 18px;
+          font-weight: 400;
+          letter-spacing: 3px;
+          & > p:nth-child(1) {
+            width: 6vw;
+          }
+        }
+      }
+    }
+
+    .header {
+      width: 800px;
+      text-align: center;
+      left: 0;
+      // right: 0;
+      margin: 0 auto;
+      top: 10px;
+      padding: 10px;
+
+      img {
+        width: 100px;
+        opacity: 1 !important;
+      }
+    }
+
+    .calculate {
+      width: 800px;
+
+      > .imgBox {
+        display: none;
+      }
+
+      .calculator {
+        padding-top: 90px;
+
+        p,
+        span {
+          font-size: 20px;
+          letter-spacing: 0.06em;
+        }
+
+        .parameters {
+          flex-wrap: wrap;
+
+          .box {
+            flex: 0 0 50%;
+            margin-bottom: 10px;
+
+            p {
+              margin-bottom: 8px;
+            }
+
+            .unitBox {
+              flex-wrap: nowrap;
+
+              span {
+                white-space: nowrap;
+              }
+            }
+          }
+
+          & > :nth-child(even) {
+            padding-left: 19.8px;
+          }
+
+          input {
+            font-size: 20px;
+            width: 230px;
+            height: 45px;
+            margin-right: 10px;
+            background-color: #e7e7e7;
+            padding-left: 10px;
+          }
+        }
+
+        .title {
+          display: none;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        .button {
+          display: none;
+        }
+
+        .result {
+          height: 550px;
+          background: none;
+          border-top: 1.5px solid #e7e7e7;
+          padding: 0;
+
+          > div {
+            flex: 0 0 50%;
+
+            p,
+            span {
+              font-size: 18px;
+              font-weight: 600;
+            }
+
+            .box {
+              margin-bottom: 30px !important;
+              align-items: center;
+
+              span {
+                border: none;
+                background-color: #e7e7e7;
+                width: 160px;
+                padding: 3px 0;
+              }
+
+              & > :nth-child(1) {
+                flex: 0 0 30% !important;
+              }
+
+              & > :nth-child(3) {
+                text-align: center;
+                flex: 0 0 15% !important;
+              }
+            }
+          }
+
+          .left {
+            padding-right: 15px;
+          }
+
+          .right {
+            padding-left: 15px;
+          }
+        }
+
+        .printBox {
+          display: block;
+          position: relative;
+          left: 10px;
+          bottom: 30px;
+
+          .temporary-payment {
+            right: 64px;
+            top: -240px;
+          }
+        }
+      }
+
+      .keyboard {
+        display: none !important;
+      }
+
+      .tobe {
+        padding: 5px;
+        right: 5px;
+        top: 50px !important;
+
+        & > :nth-child(1) {
+          margin-right: 10px;
+        }
+
+        label {
+          font-size: 14px !important;
+          margin-right: 5px;
+        }
+
+        input {
+          width: 50px !important;
+          font-size: 14px !important;
+          border: none !important;
+          padding: 5px 0;
+        }
+      }
+    }
+
+    @page {
+      margin: 1cm;
+      margin-top: 0cm;
+      margin-bottom: 0;
+      size: A4 portrait;
+    }
+  }
+}

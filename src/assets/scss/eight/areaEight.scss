@@ -1,10 +1,49 @@
+@import "../config";
+
+#area-Page {
+  display: flex;
+  flex-direction: column;
+}
+
 #area-eight {
   display: flex;
-  padding-top: 5vw;
+  justify-content: space-between;
+  flex: 1 1 90%;
+  background: linear-gradient(
+    to bottom,
+    rgba(244, 244, 244, 1) 0%,
+    rgba(247, 247, 247, 1) 15%,
+    rgba(249, 249, 249, 1) 35%,
+    rgba(252, 252, 252, 1) 100%
+  );
+  .eight-mask-close {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    width: 2vw;
+    height: 2vw;
+    z-index: 1;
+    cursor: pointer;
+    z-index: 10;
+  }
   .area-eight-left {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
+    margin-right: 4vw;
+    .area-eight-left-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 118%;
+      margin-left: -2.75vw;
+      margin-top: 3vw;
+    }
+    .area-eight-left-bottom {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
     ul {
       display: flex;
       justify-content: flex-start;
@@ -22,23 +61,30 @@
   }
 
   .area-eight-map {
-    width: 48vw;
-    height: 44vw;
+    width: 61vw;
+    height: 100%;
     position: relative;
     display: flex;
     align-items: flex-end;
+    background-color: white;
+    padding-right: 0vw;
+    @include laptop {
+      width: 58vw;
+    }
     .container {
       position: absolute;
       display: flex;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-end;
       top: 0;
       left: 0;
-      height: 100%;
-      align-items: center;
+      width: 100%;
+      height: 96%;
       .anchor-area {
         position: relative;
-        width: 80%;
+        width: auto;
         height: 100%;
+        padding-right: 2vw;
         .anchor-area-map {
           height: 100%;
           width: 100%;
@@ -47,15 +93,46 @@
             width: 100%;
             height: 100%;
           }
+          .eight-train {
+            transform: rotate(117deg);
+          }
           svg {
             position: absolute;
-            top: 0;
-            left: 35%;
-            width: 92%;
-            height: 65%;
+            top: 2%;
+            left: 61.5%;
+            height: 68%;
+            z-index: 6;
           }
         }
       }
+    }
+    .area-eight-map-bottom {
+      position: absolute;
+      width: 65%;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+  .lighter {
+    position: absolute;
+    top: 12vw;
+    left: 4.5vw;
+    width: 15%;
+    height: 6%;
+    z-index: 999;
+    mix-blend-mode: hard-light;
+    animation: lig 2s infinite;
+  }
+  @keyframes lig {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      opacity: 1;
     }
   }
 }

@@ -1,0 +1,44 @@
+.eight-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.75s;
+  p {
+    font-size: var(--navSize);
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: black;
+  }
+  p:nth-child(1) {
+    padding-inline: 0.8745vw;
+    margin-right: 0.8vw;
+    padding-block: 6px;
+    cursor: pointer;
+    transition: all 0.75s;
+  }
+  p:nth-child(2) {
+    line-height: 2.25;
+  }
+  &:hover {
+    p:nth-child(1) {
+      color: white;
+      background-color: #bcaa8d;
+      transition: all 0.75s;
+      border-radius: 5px;
+    }
+  }
+}
+.eight-title-active {
+  p:nth-child(1) {
+    color: white;
+    background-color: #bcaa8d;
+    transition: all 0.75s;
+    border-radius: 5px;
+  }
+}
+.eight-title:last-child {
+  p:last-child {
+    display: none;
+  }
+}

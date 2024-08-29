@@ -9,8 +9,8 @@
 <style lang="scss" scoped>
 .example {
   width: 100%;
-  height: 100%;
-  padding-top: 4vw;
+  height: 90%;
+  flex: 1 1 90%;
   img {
     height: 100%;
   }

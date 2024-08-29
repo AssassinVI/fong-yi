@@ -12,6 +12,7 @@
     "@types/is-url": "^1.2.32",
     "@types/node": "^20.14.11",
     "@vitejs/plugin-legacy": "^5.4.1",
+    "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "nanoid": "^5.0.7",
     "pinia": "^2.1.7",
