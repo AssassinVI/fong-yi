@@ -4,8 +4,9 @@ import HomePage from "@/views/home/HomePage.vue";
 import AreaPage from "@/views/area/AreaPage.vue";
 import AreaEightPage from "@/views/area/eight/AreaEightPage.vue";
 import AreaTransPage from "@/views/area/trans/AreaTransPage.vue";
+import MethodListPage from "@/views/space/list/listPage.vue";
 import SpacePage from "@/views/space/SpacePage.vue";
-import SpaceWaterProofPage from "@/views/space/waterProof/SpaceWaterProofPage.vue";
+import MethodPage from "@/views/space/methodPage/methodPage.vue";
 import FeaturePage from "@/views/feature/FeaturePage.vue";
 import FeatureMaterialPage from "@/views/feature/material/FeatureMaterialPage.vue";
 import FeatureMaterialInPage from "@/views/feature/materialInner/FeatureMaterialInPage.vue";
@@ -43,9 +44,14 @@ const router = createRouter({
       component: SpacePage,
       children: [
         {
-          path: "/",
-          name: "waterProof",
-          component: SpaceWaterProofPage,
+          path: "/methodList",
+          name: "methodList",
+          component: MethodListPage,
+        },
+        {
+          path: "/methodPage",
+          name: "methodPage",
+          component: MethodPage,
         },
       ],
     },

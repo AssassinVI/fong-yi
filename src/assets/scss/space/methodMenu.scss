@@ -1,0 +1,102 @@
+.methodMenu{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 610px;
+    padding: 2%;
+    background-color: #E8EBEE;
+    gap: 6%;
+
+    position: absolute;
+    top: 27%;
+    left: -33%;
+    transition: all 0.5s;
+    z-index: 100;
+
+    &.show{
+        transform: translateX(104%);
+    }
+
+
+    .list{
+        flex: 1 1 ;
+        ul{
+            list-style: none;
+            li{
+                a{
+                    position: relative;
+                    display: block;
+                    padding: 7% 0% 7% 15%;
+                    border-bottom: 1px solid #b5b5b5;
+                    color: #333;
+                    text-decoration: none;
+                    letter-spacing: 0.1em;
+
+                    &::before{
+                      content: '';
+                      position: absolute;
+                      top: 0%;
+                      bottom: 0%;
+                      left: 5%;
+                      margin: auto;
+                      width: 5px;
+                      height: 5px;
+                      background-color: #B9A78B;
+                    }
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        bottom: 0%;
+                        left: 0%;
+                        width: 0%;
+                        height: 2px;
+                        background-color: #B9A78B;
+                        transition: all 0.5s;
+                    }
+                    &:hover{
+                        &::after{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .title{
+            position: relative;
+            margin-bottom: 15%;
+            h2{
+                font-family: var(--serif);
+                font-weight: 600;
+                color: #055C33;
+            }
+            p{
+                font-family: var(--cor);
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                bottom: -12%;
+                left: 0;
+                width: 30%;
+                height: 1px;
+                background-color: #9c9c9c;
+            }
+        }
+    }
+}
+
+.menuBtn{
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    background-color: #e8ebee;
+    position: absolute;
+    top: 37%;
+    z-index: 100;
+
+    img{
+        width: 13px;
+    }
+}

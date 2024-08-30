@@ -1,23 +1,25 @@
 <template>
   <div class="water-proof-swiper-container">
     <div class="swiper-main">
-      <swiper
-        :speed="500"
-        :effect="'fade'"
-        :slides-per-view="1"
-        :loop="true"
-        :navigation="{
-          nextEl: '.water-proof-swiper-next',
-          prevEl: '.water-proof-swiper-prev',
-        }"
-        :pagination="{ clickable: true }"
-        :modules="[Navigation, EffectFade, Pagination]"
-        @slideChange="onSlideChange"
-      >
-        <swiper-slide v-for="item in props.boxContent.content">
-          <img :src="item.image" />
-        </swiper-slide>
-      </swiper>
+      <div class="swiper-img" :style="{width: props.boxContent.swiper_width}">
+        <swiper
+          :speed="500"
+          :effect="'fade'"
+          :slides-per-view="1"
+          :loop="true"
+          :navigation="{
+            nextEl: '.water-proof-swiper-next',
+            prevEl: '.water-proof-swiper-prev',
+          }"
+          :pagination="{ clickable: true }"
+          :modules="[Navigation, EffectFade, Pagination]"
+          @slideChange="onSlideChange"
+        >
+          <swiper-slide v-for="item in props.boxContent.content">
+            <img :src="item.image" />
+          </swiper-slide>
+        </swiper>
+      </div>
       <div class="swiper-para">
         <h2 class="swiper-para-h2">
           {{ props.boxContent.title }}

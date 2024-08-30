@@ -13,30 +13,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 7vw;
+    margin-top: 3vw;
+
+    .swiper-img{
+      width: 45vw;
+      margin-right: 4%;
+    }
+
     .swiper-button-prev,
     .swiper-button-next {
-      color: black;
+      color:  #ccc;
       border: none;
       background-color: transparent;
       top: 90%;
-      &::after {
-        text-shadow: 5px 3px 3px rgba(0, 0, 0, 0.5);
+      width: 50px;
+      height: 50px;
+
+      &::after{
+        font-size: 25px;
       }
+      
     }
     .swiper-button-next {
-      right: 13%;
+      right: 31%;
     }
     .swiper-button-prev {
-      left: 83%;
+      left: 64%;
     }
     .swiper-pagination-bullet-active {
       background-color: white;
     }
     .swiper {
-      width: 45vw;
+      width: 100%;
       margin-inline: 0;
-      margin-right: 4%;
     }
     .swiper-para {
       display: flex;
@@ -45,17 +54,31 @@
       letter-spacing: 2px;
       width: 20vw;
       .swiper-para-h2 {
+        position: relative;
         color: #075c33;
+        font-family: var(--serif);
         font-size: var(--mainSize);
+        margin-bottom: 9%;
+        &::before{
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -25%;
+          width: 28%;
+          height: 1px;
+          background-color: #075c334a;
+        }
       }
       .swiper-para-p {
         position: relative;
         display: flex;
         align-items: center;
         font-size: var(--navSize);
-        margin-top: 0.5vw;
+        font-family: var(--serif);
+        margin-top: 0.2vw;
         width: 100%;
         overflow: hidden;
+        padding: 1% 2%;
         transition: all 0.5s;
         // &::after {
         //   content: "";
@@ -72,10 +95,10 @@
           color: black;
         }
         .swiper-para-dot {
-          width: 7.5px;
-          height: 7.5px;
+          width: 5px;
+          height: 5px;
           background-color: #b4a388;
-          margin-right: 0.25vw;
+          margin-right: 0.5vw;
         }
         .swiper-para-p-bg {
           position: absolute;

@@ -84,49 +84,49 @@ export const waterProofContent = [
       {
         number: 0,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/1.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/1.jpg", import.meta.url).href,
         txt: "",
       },
       {
         number: 1,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/2.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/2.jpg", import.meta.url).href,
         txt: "地坪整體粉光、清潔表層，填縫材補縫隙",
       },
       {
         number: 2,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/3.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/3.jpg", import.meta.url).href,
         txt: "導角以樹脂砂漿處理，延伸至牆面、防水材",
       },
       {
         number: 3,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/4.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/4.jpg", import.meta.url).href,
         txt: "施作彈性防水材",
       },
       {
         number: 4,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/5.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/5.jpg", import.meta.url).href,
         txt: "試水72小時以上，確定不漏水為止",
       },
       {
         number: 5,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/6.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/6.jpg", import.meta.url).href,
         txt: "施作水泥砂漿並貼磚",
       },
       {
         number: 6,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/7.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/7.jpg", import.meta.url).href,
         txt: "防水材抹縫",
       },
       {
         number: 7,
         id: nanoid(),
-        image: new URL("@/assets/img/頂樓防水/8.png", import.meta.url).href,
+        image: new URL("@/assets/img/頂樓防水/8.jpg", import.meta.url).href,
         txt: "再試水72小時以上，確定不漏水為止",
       },
     ],
@@ -134,6 +134,7 @@ export const waterProofContent = [
   {
     tag: "window",
     title: "窗框防水",
+    swiper_width:'28vw',
     content: [
       {
         number: 0,

@@ -1,7 +1,5 @@
 <template>
-  <router-link :to="{ name: props.pathName }" class="nav-child-link">{{
-    props.zhName
-  }}</router-link>
+  <router-link :to="{ name: props.pathName }" class="nav-child-link">{{props.zhName}}</router-link>
 </template>
 
 <script setup lang="ts">

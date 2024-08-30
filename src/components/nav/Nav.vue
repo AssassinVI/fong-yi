@@ -8,8 +8,10 @@
         <div class="nav-left-text">
           <div class="nav-left-text-item" v-for="item in navLink" :key="nanoid">
             <span class="nav-link-span">
-              <p>{{ item.zhName }}</p> </span
-            ><span class="nav-left-text-item-line"></span>
+              <router-link v-if="item.pathName!=undefined" :to="{ name: item.pathName }">{{item.zhName}}</router-link>
+              <p v-else>{{ item.zhName }}</p> 
+            </span>
+            <span class="nav-left-text-item-line"></span>
             <div class="nav-child">
               <NavChild
                 v-for="child in item.child"

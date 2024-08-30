@@ -23,16 +23,13 @@ export const navLink = [
     child: [
       {
         pathName: "eight",
-        zhName: "我是連結",
+        zhName: "中央公園",
       },
       {
         pathName: "eight",
-        zhName: "我是連結",
+        zhName: "生態段宜居優勢",
       },
-      {
-        pathName: "eight",
-        zhName: "我是連結",
-      },
+      
     ],
   },
   {
@@ -40,17 +37,14 @@ export const navLink = [
     zhName: "團隊豐藝",
     child: [
       {
-        pathName: "eight",
-        zhName: "我是連結",
+        pathName: "methodList",
+        zhName: "跨界創藝",
       },
       {
         pathName: "eight",
-        zhName: "我是連結",
+        zhName: "七星團隊",
       },
-      {
-        pathName: "eight",
-        zhName: "我是連結",
-      },
+      
     ],
   },
   {
@@ -58,35 +52,34 @@ export const navLink = [
     zhName: "建築豐馥",
     child: [
       {
-        pathName: "featureMaterials",
-        zhName: "我是連結",
-      },
-      {
-        pathName: "featureMaterials",
-        zhName: "我是連結",
-      },
-      {
         pathName: "floorPlan",
-        zhName: "floor",
+        zhName: "藝術精鑄",
       },
+      {
+        pathName: "loan",
+        zhName: "房貸試算",
+      },
+      
+      
     ],
   },
   {
     name: "THE FACILITIES",
     zhName: "配備豐質",
-    child: [
-      {
-        pathName: "waterProof",
-        zhName: "我是連結",
-      },
-      {
-        pathName: "waterProof",
-        zhName: "我是連結",
-      },
-      {
-        pathName: "waterProof",
-        zhName: "我是連結",
-      },
-    ],
+    pathName: "featureMaterials",
+    // child: [
+    //   {
+    //     pathName: "waterProof",
+    //     zhName: "我是連結",
+    //   },
+    //   {
+    //     pathName: "waterProof",
+    //     zhName: "我是連結",
+    //   },
+    //   {
+    //     pathName: "waterProof",
+    //     zhName: "我是連結",
+    //   },
+    // ],
   },
 ];
